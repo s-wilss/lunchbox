@@ -20,7 +20,6 @@ import ErrorBoundary from './Components/ErrorBoundaries/ErrorBoundaries';
    text-align: center;
    line-height: 60px;
    font-size: 30px;
-   font-family: 'Trade Winds', serif ;
    color: rgb(255, 255, 255);
  `
 

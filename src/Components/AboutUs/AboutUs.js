@@ -19,9 +19,11 @@ const AboutUsCont = styled.div`
 const AboutUs =() => {
     return(
         <AboutUsCont>
-            <h2 class = "title-separation">About Us</h2>
-            <IntroductionHistory/>
-            <OurTeam/>
+            <h2 id = "introduction"> About Us</h2>
+            
+                <IntroductionHistory/>
+                <OurTeam/>
+            
             <PhotosVideos/>
         </AboutUsCont>
     );

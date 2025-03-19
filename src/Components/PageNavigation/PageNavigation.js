@@ -7,26 +7,36 @@ import SocialMediaLinks from "./SocialMediaLinks";
  /* Style for navigation list*/
  const NavigationCont = styled.div`
     display: flex;
-    gap:50px;
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    justify-content:space-evenly;
+    height: 65px;
+    background-image: linear-gradient(to bottom, rgb(171, 218, 160), rgb(48, 48, 48));
     font-family: 'Host Grotesk', sans-serif;
+    color:rgb(255, 255, 255) ;
+    font-size: 20px;
+    transition: color 0.3s ease;
+    justify-content: space-between;
     `
-     
-  
+ 
+
+const HalfCont = styled.div`
+    display: flex;
+    justify-content: space-between;
+    `
+
+
 
 
 const PageNavigation = () =>{
  
     return(
         
-        <div className="PageNavigation">
-            <h2>Page Navigation</h2>
-            <NavigationLinks/>
-            <SearchBar/>
-            <SocialMediaLinks/>\
+        <div>
+            <NavigationCont>
+                <HalfCont>
+                    <SearchBar/>
+                    <NavigationLinks/>
+                </HalfCont>
+                <SocialMediaLinks/>
+            </NavigationCont>
     
         </div>
     );

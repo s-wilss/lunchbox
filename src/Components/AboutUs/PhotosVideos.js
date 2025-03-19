@@ -6,11 +6,11 @@ import { Carousel } from 'react-responsive-carousel';
 
 const PhotosVideos = () => {
 
-    const images = [{src: "src/Images/mark-adriane-FH6JcaCrYJ0-unsplash.jpg", alt: "A man punching pads"},
-              {src:"src/Images/joel-muniz-lUK16p_JtCM-unsplash.jpg", alt: "A boxing ring"},
-              {src:"src/Images/hermes-rivera-qbf59TU077Q-unsplash.jpg", alt: "Two men sparring"}];
+    const images = [{src: "../../Images/mark-adriane-FH6JcaCrYJ0-unsplash.jpg", alt: "A man punching pads"},
+              {src:"../../Images/joel-muniz-lUK16p_JtCM-unsplash.jpg", alt: "A boxing ring"},
+              {src:"../../Images/hermes-rivera-qbf59TU077Q-unsplash.jpg", alt: "Two men sparring"}];
 
-
+            
 
 
     return(

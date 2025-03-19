@@ -4,7 +4,7 @@ import ProfessionalFights from "./ProfessionalFights";
 
 const Schedule = () => {
     return(
-        <div className="Schedule">
+        <div id ="schedule">
             <h2>Schedule</h2>
             <ClassTimetable/>
             <ProfessionalFights/>

@@ -4,7 +4,7 @@ import SignUp from "./SignUp";
 
 const JoinUs =() =>{
     return(
-        <div className="JoinUs">
+        <div id="joinus">
             <h2>Join Us</h2>
             <SendUsAMessage/>
             <SignUp/>
