@@ -12,13 +12,20 @@ const LogoImage = styled.img`
     height: 30rem;
     width: auto;
 `
+const TitleCont = styled.div`
+display: flex;
+    align-items: center;
+    gap: 0px;
+    padding-left: 50px;  
+    padding-top: 90px;  
+`
 
 const Title = () => {
     return(
-        <div>
+        <TitleCont>
             <LogoCont>Lunchbox</LogoCont>
             <LogoImage src={logoImage} alt="The Lunchbox Logo"/>
-        </div>
+        </TitleCont>
     );
 };
 

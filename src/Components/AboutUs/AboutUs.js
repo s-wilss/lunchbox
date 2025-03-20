@@ -13,19 +13,47 @@ const AboutUsCont = styled.div`
     justify-content: space-around;
     align-items: center;
     background-color: rgb(57, 95, 40);
-    
     `
+
+const TitleBar = styled.div`
+    display: flex;
+    height: 50px;
+    align-items: flex start;
+    background-image: linear-gradient(to left, rgb(57, 95, 40), rgb(19, 51, 29));
+    padding-left: 30px;
+    `
+
+const FullCont = styled.div`
+    display: flex;
+    flex-direction: column;
+
+`
+
+
+const StackedDiv = styled.div`
+    display: flex;
+    flex-direction: column;
+`
+
+
+
+
+
 
 const AboutUs =() => {
     return(
-        <AboutUsCont>
-            <h2 id = "introduction"> About Us</h2>
-            
-                <IntroductionHistory/>
-                <OurTeam/>
-            
-            <PhotosVideos/>
-        </AboutUsCont>
+        <FullCont>
+            <TitleBar>
+                <h2 id = "introduction"> About Us</h2>
+            </TitleBar>
+            <AboutUsCont>
+                <StackedDiv>
+                    <IntroductionHistory/>
+                    <OurTeam/>
+                </StackedDiv>
+                <PhotosVideos/>
+            </AboutUsCont>
+        </FullCont>
     );
 };
 

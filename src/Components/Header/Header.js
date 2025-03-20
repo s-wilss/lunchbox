@@ -10,16 +10,23 @@ import Title from  "./Title";
     width: 100%;
     position: relative; 
     height: 600px; 
-    
+
     align-items: center;
-    background-image: linear-gradient(to left, rgb(57, 95, 40), rgb(19, 51, 29));
+    background-image: linear-gradient(to bottom, rgb(19, 51, 29), rgb(57, 95, 40));
+
+    .Title{
+    
+    }
   `
+
+
+
 
 
 const Header =() => {
     return(
         <HeaderCont>
-            <h2>Header</h2>
+            
             <Title/>
             <Pictures/>
 
