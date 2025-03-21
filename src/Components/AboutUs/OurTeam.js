@@ -28,7 +28,7 @@ const ImageBubble = styled.img`
 const TeamContainer = styled.div`
     display: flex;
     justify-content: center;
-    gap: 10rem; /* Adds spacing between team members */
+    gap: 10rem; 
 
     h3{
         font-size: 20px;

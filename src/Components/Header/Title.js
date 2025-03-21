@@ -13,7 +13,7 @@ const LogoImage = styled.img`
     width: auto;
 `
 const TitleCont = styled.div`
-display: flex;
+    display: flex;
     align-items: center;
     gap: 0px;
     padding-left: 50px;  

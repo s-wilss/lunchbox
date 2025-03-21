@@ -1,102 +1,135 @@
-import React, { useEffect } from 'react';
-import styled from 'styled-components';
+import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
+import 'mapbox-gl/dist/mapbox-gl.css'; 
 
-// Professional Fights map:
+// Set your Mapbox access token
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3dpbHNzIiwiYSI6ImNtN2RhOHZsOTAxMjkybXB3NXpqdHYxZGgifQ.E-xet5qyC2UppM0lIK80wQ';
 
-// Fight information for map, in array format
-const fights = [
-    {
+const popupStyles = `
+  .mapboxgl-popup .mapboxgl-popup-content {
+    text-align: center;
+    padding: 15px;
+    border: 4px solid rgb(19, 51, 29);
+    border-radius: 4px;
+    background-color: rgba(255, 255, 255, 0.363) !important; 
+  }
+  
+  .fight-details h3 {
+    margin-top: 0;
+    font-weight: bold;
+    color: rgb(19, 51, 29);
+    font-family: 'Trade Winds', serif;
+  }
+  
+  .fight-details p {
+    margin: 5px 0;
+    font-family: 'Trade Winds', serif;
+  }
+  
+  .fight-date {
+    font-style: italic;
+  }
+`;
+
+const ProfessionalFights = () => {
+  const mapContainerRef = useRef(null);
+  
+   // Add custom CSS for popup styling
+   const styleElement = document.createElement('style');
+   styleElement.textContent = popupStyles;
+   document.head.appendChild(styleElement);
+
+  useEffect(() => {
+    // Make sure the container ref is available
+    if (!mapContainerRef.current) return;
+    
+    // Initialize map
+    const map = new mapboxgl.Map({
+      container: mapContainerRef.current,
+      style: 'mapbox://styles/mapbox/dark-v11',
+      center: [132.828, -24.811],
+      zoom: 2.6
+    });
+    
+    // Fight information for map
+    const fights = [
+      {
         location: [115.8516, -31.9484], // Perth
         title: "Foxbox 205",
         mainEvent: "Callaghan vs Brigham",
         date: "2025-04-15",
         venue: "RAC Arena"
-    },
-    {
+      },
+      {
         location: [151.2093, -33.8688], // Sydney
         title: "UFC Fight Night",
         mainEvent: "Snoke vs Dallis",
         date: "2025-06-20",
         venue: "Qudos Bank Arena"
-    },
-    {
+      },
+      {
         location: [144.9364, -37.7892], // Melbourne
         title: "UFC 308",
         mainEvent: "Cerwin vs Moult",
         date: "2025-07-08",
         venue: "Melbourne Pavillion"
-    }
-];
+      }
+    ];
 
-const ProFightTitleCont = styled.div`
-    font-size: 25px;
-    font-family: 'Trade Winds', serif;
-    text-align: center;
-    width: 40%;
-    margin-left: auto;
-    margin-right: auto;
-    margin-bottom: 10px;
-`;
-
-const MapCont = styled.div`
-    width: 100%;
-    height: 500px;
-    border-radius: 8px;
-    margin: 0 auto; 
-    display: block; 
-    margin-top: 0px;%;
     
-`;
+    // Wait for map to load before adding markers
+    map.on('load', () => {
+      // Add markers and popups for each fight
+      fights.forEach(fight => {
+        // Create popup
+        const popup = new mapboxgl.Popup({ offset: 25 })
+          .setHTML(
+            `<div class="fight-details">
+              <h3>${fight.title}</h3>
+              <p>${fight.mainEvent}</p>
+              <p>${fight.venue}</p>
+              <p class="fight-date">${fight.date}</p>
+            </div>`
+          );
 
-const ProfessionalFights = () => {
-    useEffect(() => {
-        // Initialize the Mapbox map only when the component has mounted (DOM is ready)
-        const map = new mapboxgl.Map({
-            container: 'map', // The id of the div where the map will be rendered
-            style: 'mapbox://styles/mapbox/dark-v11', // Dark theme style
-            center: [132.828, -24.811], // Starting position [lng, lat]
-            zoom: 2.6 // Starting zoom level
-        });
+        // Create marker
+        new mapboxgl.Marker({
+          color: "#00FF00" // Green
+        })
+          .setLngLat(fight.location)
+          .setPopup(popup)
+          .addTo(map);
+      });
 
-        // Add markers and popups for each fight
-        fights.forEach(fight => {
-            // Create popup
-            const popup = new mapboxgl.Popup({ offset: 25 })
-                .setHTML(
-                    `<div class="fight-details">
-                        <h3>${fight.title}</h3>
-                        <p>${fight.mainEvent}</p>
-                        <p>${fight.venue}</p>
-                        <p class="fight-date">${fight.date}</p>
-                    </div>`
-                );
+      // Add zoom and rotation controls
+      map.addControl(new mapboxgl.NavigationControl());
 
-            // Create marker
-            new mapboxgl.Marker({ color: "#00FF00" }) // Green
-                .setLngLat(fight.location)
-                .setPopup(popup)
-                .addTo(map);
-        });
-
-        // Add zoom and rotation controls
-        map.addControl(new mapboxgl.NavigationControl());
-
-        // Add fullscreen control
-        map.addControl(new mapboxgl.FullscreenControl());
-
-        // Cleanup map when component unmounts to prevent memory leaks
-        return () => map.remove();
-    }, []); // Empty dependency array ensures this effect runs once when the component mounts
-
-    return (
-        <div className='ProfessionalFights'>
-            <ProFightTitleCont>
-                <h3>Professional Fights</h3>
-            </ProFightTitleCont>
-            <MapCont id="map"></MapCont> 
-        </div>
-    );
+      // Add fullscreen control
+      map.addControl(new mapboxgl.FullscreenControl());
+    });
+    
+    // Clean up on unmount
+    return () => map.remove();
+  }, []); // Empty dependency array means this effect runs once on mount
+  
+  return (
+    <div style={{ width: '100%', height: '100%' }}>
+      <h3 style={{ textAlign: 'center', fontFamily: 'Trade Winds, serif', color: 'white', fontSize: '25px', marginLeft: '-600px' }}>
+        Professional Fights
+      </h3>
+      <div 
+        ref={mapContainerRef} 
+        style={{ 
+          width: '60%', 
+          height: '70%', // Subtract header height
+          borderRadius: '8px',
+          marginLeft:'50px'
+        }} 
+      />
+    </div>
+  );
 };
+
 export default ProfessionalFights;
+
+

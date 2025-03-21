@@ -18,7 +18,7 @@ const TitleBar = styled.div`
     display: flex;
     height: 50px;
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(69, 131, 55), rgb(49, 105, 67));
+    background-image: linear-gradient(to right, rgb(185, 130, 59), rgb(49, 105, 67));
     padding-left: 30px;
 
     h2{
@@ -30,9 +30,11 @@ const TitleBar = styled.div`
 
     }
 
-
-
     `
+
+   
+
+
 
 const FullCont = styled.div`
     display: flex;
@@ -40,7 +42,6 @@ const FullCont = styled.div`
     background-image: linear-gradient(to bottom, rgb(57, 95, 40), rgb(32, 54, 22));
 
 `
-
 
 const StackedDiv = styled.div`
     display: flex;

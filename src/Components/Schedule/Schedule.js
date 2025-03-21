@@ -7,7 +7,7 @@ const TitleBar = styled.div`
     display: flex;
     height: 50px;
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(69, 131, 55), rgb(49, 105, 67));
+    background-image: linear-gradient(to right, rgb(185, 130, 59), rgb(49, 105, 67));
     padding-left: 30px;
 
     h2{
@@ -19,9 +19,9 @@ const TitleBar = styled.div`
 
     }
 
-
-
     `
+
+
 const FullCont = styled.div`
     display: flex;
     flex-direction: row;
@@ -36,8 +36,6 @@ const FullCont = styled.div`
 
 
 
-
-
 const Schedule = () => {
     return(
         <div id ="schedule">
@@ -46,9 +44,7 @@ const Schedule = () => {
             </TitleBar>
             <FullCont>
                 <ProfessionalFights/>
-    
                 <ClassTimetable/>
-              
             </FullCont>
         </div>
     );
