@@ -7,28 +7,50 @@ import Image2 from "../../Images/joel-muniz-lUK16p_JtCM-unsplash.jpg";
 import Image3 from "../../Images/mark-adriane-FH6JcaCrYJ0-unsplash.jpg";
 
 
+/*Override to reduce gaps in carousel*/
+const customStyles = `
+  .carousel-root .thumbs-wrapper {
+    margin: -15px 0 !important; 
+  }
+  
+  .carousel .thumb {
+    padding: 0 !important; 
+    margin-right: 4px !important; 
+  }
+  
+  .carousel .thumbs {
+    padding: 0 !important;
+  }
+`;
+
+
 
 
 const PhotosVideos = () => {
 
-    const images = [{src: Image1, alt: "A man punching pads"},
-              {src: Image2, alt: "A boxing ring"},
-              {src: Image3, alt: "Two men sparring"}];
+    const images = [
+        {src: Image1, alt: "A man punching pads"},
+        {src: Image2, alt: "A boxing ring"},
+        {src: Image3, alt: "Two men sparring"}
+    ];
 
     const carouselCont = {
-            width: '40%',  
-            height: '33%' ,    
-            marginLeft: 'auto',
-            marginRight: '50px'   
+        width: '70%',
+        height: '25%',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+        marginTop: '10px'  
                  
             };
 
     const titleCont = {
-        fontSize: '20px',
-        margin: '0',
+        fontSize: '25px',
         fontFamily: 'Trade Winds, serif',
+        textAlign: 'center',
+        width: '40%',
         marginLeft: 'auto',
-        marginRight: '50px'   
+        marginRight: 'auto',
+        marginBottom: '10px'
                      
         };
                     
@@ -36,8 +58,11 @@ const PhotosVideos = () => {
 
 
     return(
-        <div style={titleCont}>
-            <h3> Photos & Videos </h3>
+        <div>
+            <style>{customStyles}</style>
+            <div style={titleCont}> 
+                Photos & Videos
+            </div>
                 <div style = {carouselCont}>
                     <Carousel
                     autoPlay={true}
@@ -52,10 +77,6 @@ const PhotosVideos = () => {
                             </div>
                         ))}
 
-
-                        
-                        
-                    
 
                     
                     </Carousel>

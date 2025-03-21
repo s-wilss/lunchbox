@@ -12,13 +12,14 @@ import Title from  "./Title";
     height: 600px; 
 
     align-items: center;
-    background-image: linear-gradient(to bottom, rgb(19, 51, 29), rgb(57, 95, 40));
+    background-image: linear-gradient(to bottom, rgb(185, 130, 59), rgb(57, 95, 40));
+    
 
     .Title{
     
     }
   `
-
+//background-image: linear-gradient(to bottom, rgb(185, 130, 59), rgb(57, 95, 40));
 
 
 

@@ -4,19 +4,30 @@ import styled from 'styled-components';
 
 
 const TextContent = styled.div`
-     font-family: 'Host Grotesk', sans-serif;
+    font-family: 'Host Grotesk', sans-serif;
     font-size: 16px;
     color: white;
     line-height: normal;
     margin: 20px;
 
 `
+const IntroTitleCont = styled.div`
+        font-size: 25px;
+        font-family: 'Trade Winds', serif;
+        text-align: center;
+        width: 40%;
+        margin-left: auto;
+        margin-right: auto;
+        margin-bottom: 10px;
+    `
 
 
 const IntroductionHistory = () => {
     return(
         <div className='IntroductionHistory'>
-            <h3>Introduction & History</h3>
+            <IntroTitleCont>
+                Introduction & History
+            </IntroTitleCont>
             <TextContent>
                 Welcome to Lunchbox. We are an elite level boxing gym that excels at making fighters out of busy professionals. Founded in 2014,<br/> 
                 we have over ten years helping individuals of all backgrounds develop their skills, confidence, 

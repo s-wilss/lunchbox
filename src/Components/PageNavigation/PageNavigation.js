@@ -8,7 +8,7 @@ import SocialMediaLinks from "./SocialMediaLinks";
  const NavigationCont = styled.div`
     display: flex;
     height: 65px;
-    background-image: linear-gradient(to bottom, rgb(171, 218, 160), rgb(48, 48, 48));
+    background-image: linear-gradient(to bottom, rgb(69, 131, 55), rgb(49, 105, 67));
     font-family: 'Host Grotesk', sans-serif;
     color:rgb(255, 255, 255) ;
     font-size: 20px;

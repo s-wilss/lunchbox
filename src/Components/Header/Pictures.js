@@ -14,7 +14,7 @@ const ImageCont = styled.div`
     gap: 0px;
     justify-content: flex-end; 
     position: absolute;
-    bottom: -11px;
+    bottom: 0px;
     right: 20px;
 
 `
