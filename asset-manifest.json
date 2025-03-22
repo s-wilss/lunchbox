@@ -1,24 +1,24 @@
 {
   "files": {
-    "main.css": "/github-pages-app/static/css/main.6f051454.css",
-    "main.js": "/github-pages-app/static/js/main.712b2642.js",
-    "static/js/453.ed3810f9.chunk.js": "/github-pages-app/static/js/453.ed3810f9.chunk.js",
-    "static/media/hermes-rivera-qbf59TU077Q-unsplash.jpg": "/github-pages-app/static/media/hermes-rivera-qbf59TU077Q-unsplash.0d54c55155d0eaeada9f.jpg",
-    "static/media/mark-adriane-FH6JcaCrYJ0-unsplash.jpg": "/github-pages-app/static/media/mark-adriane-FH6JcaCrYJ0-unsplash.740facfbfb715bb64712.jpg",
-    "static/media/joel-muniz-lUK16p_JtCM-unsplash.jpg": "/github-pages-app/static/media/joel-muniz-lUK16p_JtCM-unsplash.78c3bff33ae0ec02d454.jpg",
-    "static/media/benson.png": "/github-pages-app/static/media/benson.934664b02b40801c6ef4.png",
-    "static/media/sarah.png": "/github-pages-app/static/media/sarah.24d7e07b026a962036bd.png",
-    "static/media/mike.png": "/github-pages-app/static/media/mike.b0bfd20c1b49669c9ffa.png",
-    "static/media/CorporateWomanBoxingGloves_NB.png": "/github-pages-app/static/media/CorporateWomanBoxingGloves_NB.56062141cb35e671b513.png",
-    "static/media/CorporateManBoxingGloves_NB.png": "/github-pages-app/static/media/CorporateManBoxingGloves_NB.34f0aed0fcda9ad6fdee.png",
-    "static/media/LogoNB.png": "/github-pages-app/static/media/LogoNB.2c8328065da3ee2fb6e2.png",
-    "index.html": "/github-pages-app/index.html",
-    "main.6f051454.css.map": "/github-pages-app/static/css/main.6f051454.css.map",
-    "main.712b2642.js.map": "/github-pages-app/static/js/main.712b2642.js.map",
-    "453.ed3810f9.chunk.js.map": "/github-pages-app/static/js/453.ed3810f9.chunk.js.map"
+    "main.css": "/lunchbox/static/css/main.6f051454.css",
+    "main.js": "/lunchbox/static/js/main.fc9a89cf.js",
+    "static/js/453.ed3810f9.chunk.js": "/lunchbox/static/js/453.ed3810f9.chunk.js",
+    "static/media/hermes-rivera-qbf59TU077Q-unsplash.jpg": "/lunchbox/static/media/hermes-rivera-qbf59TU077Q-unsplash.0d54c55155d0eaeada9f.jpg",
+    "static/media/mark-adriane-FH6JcaCrYJ0-unsplash.jpg": "/lunchbox/static/media/mark-adriane-FH6JcaCrYJ0-unsplash.740facfbfb715bb64712.jpg",
+    "static/media/joel-muniz-lUK16p_JtCM-unsplash.jpg": "/lunchbox/static/media/joel-muniz-lUK16p_JtCM-unsplash.78c3bff33ae0ec02d454.jpg",
+    "static/media/benson.png": "/lunchbox/static/media/benson.934664b02b40801c6ef4.png",
+    "static/media/sarah.png": "/lunchbox/static/media/sarah.24d7e07b026a962036bd.png",
+    "static/media/mike.png": "/lunchbox/static/media/mike.b0bfd20c1b49669c9ffa.png",
+    "static/media/CorporateWomanBoxingGloves_NB.png": "/lunchbox/static/media/CorporateWomanBoxingGloves_NB.56062141cb35e671b513.png",
+    "static/media/CorporateManBoxingGloves_NB.png": "/lunchbox/static/media/CorporateManBoxingGloves_NB.34f0aed0fcda9ad6fdee.png",
+    "static/media/LogoNB.png": "/lunchbox/static/media/LogoNB.2c8328065da3ee2fb6e2.png",
+    "index.html": "/lunchbox/index.html",
+    "main.6f051454.css.map": "/lunchbox/static/css/main.6f051454.css.map",
+    "main.fc9a89cf.js.map": "/lunchbox/static/js/main.fc9a89cf.js.map",
+    "453.ed3810f9.chunk.js.map": "/lunchbox/static/js/453.ed3810f9.chunk.js.map"
   },
   "entrypoints": [
     "static/css/main.6f051454.css",
-    "static/js/main.712b2642.js"
+    "static/js/main.fc9a89cf.js"
   ]
 }
