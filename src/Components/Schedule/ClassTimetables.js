@@ -20,7 +20,8 @@ const TableSpace = styled.div`
     display: flex;
     flex-direction: row;
     justify-content: space-between; /* Changed from space-around for better control */
-    margin-right: 80px;
+    margin-right: 150px;
+    margin-bottom: 100px;
     gap: 30px; /* This adds the gap between your tables */
 `;
 
@@ -29,15 +30,18 @@ const Heading = styled.h5`
     font-size: 20px;
     font-family: 'Trade Winds', serif;
     width: 100%; /* Full width of parent */
-    margin-bottom: 10px;
+    margin-bottom: 0px;
     white-space: nowrap; /* Prevent text from wrapping */
     overflow: hidden; /* Hide overflow */
     text-overflow: ellipsis; /* Add ellipsis if text is too long */
 `;
 
 const TableCell = styled.td`
-    padding: 10px;
+    padding: 20px;
     line-height: 1;
+   
+}
+
 `;
 
 const FirstTableCell = styled.td`
@@ -49,9 +53,14 @@ const TimetableTitleCont = styled.h2`
     font-size: 25px;
     font-family: 'Trade Winds', serif;
     text-align: center;
-    width: 100%; /* Make this full width */
-    margin-bottom: 20px; /* Increased margin for better spacing */
+    width: 100%; /* Ensure full width */
+    margin-right: 150px; /* Add this to match TableSpace */
+    display: block;
 `;
+
+
+
+
 
 const ClassTimetable = () => {
     return (
