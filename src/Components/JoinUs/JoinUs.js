@@ -32,10 +32,7 @@ const FullCont = styled.div`
     justify-content: space-between;
     align-items: center;
    
-
 `
-
-
 
 
 
@@ -47,11 +44,9 @@ const JoinUs =() =>{
                     Join Us
                 </h2>
             </TitleBar>
-
             <FullCont>
                 <SignUp/>
-                <SendUsAMessage/>
-                
+                <SendUsAMessage/>        
             </FullCont>
             
             

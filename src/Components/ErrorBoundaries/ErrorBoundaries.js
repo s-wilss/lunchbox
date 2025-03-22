@@ -25,7 +25,7 @@ class ErrorBoundary extends React.Component {
     if (this.state.hasError) {
         return (
           <div>
-            <h1>Oops, something went wrong.</h1>
+            <h1>Oops, there was an error:</h1>
             <p>{this.state.errorInfo ? this.state.errorInfo.componentStack : "No additional error info available"}</p>
           </div>
         );
