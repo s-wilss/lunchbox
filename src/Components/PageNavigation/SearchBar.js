@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import styled from 'styled-components';
 
-/* Site search bar */
+//Styling for Site search bar 
 const SearchBarCont = styled.div`
     input {
         font-family: 'Host Grotesk', sans-serif;
@@ -20,18 +20,12 @@ const SearchBarCont = styled.div`
     }
 `;
 
-/* Mark styling */
-const MarkStyle = styled.mark`
-    background-color: #ffeb3b;
-    color: black;
-    padding: 0 2px;
-    border-radius: 2px;
-`;
 
+//Searchbar component
 const SearchBar = () => {
     const [searchTerm, setSearchTerm] = useState('');
 
-    // Function for page search with better React compatibility
+    
     const search = (event) => {
         event.preventDefault();
         
@@ -39,7 +33,7 @@ const SearchBar = () => {
         if (keyword === "") return;
 
         try {
-            // Use a safer approach with querySelector instead of querySelectorAll + forEach
+            
             const contentArea = document.querySelector('.App');
             if (!contentArea) return;
 
@@ -52,7 +46,7 @@ const SearchBar = () => {
                 }
             });
             
-            // Create a TreeWalker to safely navigate text nodes
+            // Create a TreeWalker to navigate text nodes
             const walker = document.createTreeWalker(
                 contentArea,
                 NodeFilter.SHOW_TEXT,
@@ -105,7 +99,7 @@ const SearchBar = () => {
                     }
                 }
                 
-                // Replace the original node with our fragment
+                // Replace the original node with the fragment
                 if (node.parentNode) {
                     node.parentNode.replaceChild(fragment, node);
                 }
@@ -121,6 +115,7 @@ const SearchBar = () => {
         }
     };
 
+    //Returns the searchbar component
     return (
         <form onSubmit={search}>
             <SearchBarCont>

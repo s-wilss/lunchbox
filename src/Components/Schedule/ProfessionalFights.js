@@ -2,10 +2,10 @@ import React, { useEffect, useRef } from 'react';
 import mapboxgl from 'mapbox-gl';
 import 'mapbox-gl/dist/mapbox-gl.css'; 
 
-// Set your Mapbox access token
+// Mapbox access token
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3dpbHNzIiwiYSI6ImNtN2RhOHZsOTAxMjkybXB3NXpqdHYxZGgifQ.E-xet5qyC2UppM0lIK80wQ';
 
-// Define popup styles outside the component
+// Styles for individual fight popups
 const popupStyles = `
   .mapboxgl-popup .mapboxgl-popup-content {
     text-align: center;
@@ -32,13 +32,14 @@ const popupStyles = `
   }
 `;
 
+//
 const ProfessionalFights = () => {
   const mapContainerRef = useRef(null);
   const styleRef = useRef(null);
   
   // First useEffect for setting up styles
   useEffect(() => {
-    // Add custom CSS for popup styling
+    // Popup styling
     const styleElement = document.createElement('style');
     styleElement.textContent = popupStyles;
     document.head.appendChild(styleElement);
@@ -52,11 +53,11 @@ const ProfessionalFights = () => {
         document.head.removeChild(styleRef.current);
       }
     };
-  }, []); // Run once on mount
+  }, []); 
   
-  // Second useEffect for map initialization
+ 
   useEffect(() => {
-    // Make sure the container ref is available
+   
     if (!mapContainerRef.current) return;
     
     // Initialize map
@@ -125,8 +126,9 @@ const ProfessionalFights = () => {
     
     // Clean up on unmount
     return () => map.remove();
-  }, []); // Empty dependency array means this effect runs once on mount
-  
+  }, []); // Empty dependency array 
+
+  //Returns the title & map 
   return (
     <div style={{ width: '100%', height: '100%' }}>
       <h3 style={{ textAlign: 'center', fontFamily: 'Trade Winds, serif', color: 'white', fontSize: '25px', marginLeft: '-600px' }}>
@@ -136,11 +138,11 @@ const ProfessionalFights = () => {
         ref={mapContainerRef} 
         style={{ 
           width: '60%', 
-          height: '70%', // Subtract header height
+          height: '70%', 
           borderRadius: '8px',
           marginLeft:'50px'
         }} 
-        role="presentation" // Important for your test
+        role="presentation" 
       />
     </div>
   );

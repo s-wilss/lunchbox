@@ -13,7 +13,7 @@ const AboutUsCont = styled.div`
     justify-content: space-between;
     align-items: center;
     `
-
+//Styling for the title container
 const TitleBar = styled.div`
     display: flex;
     height: 50px;
@@ -27,40 +27,32 @@ const TitleBar = styled.div`
         color: white; 
         margin: 0;
         padding: 10px 0;
-
     }
-
     `
 
-   
-
-
-
+ //Background gradient + position of all elements
 const FullCont = styled.div`
     display: flex;
     flex-direction: column;
     background-image: linear-gradient(to bottom, rgb(57, 95, 40), rgb(32, 54, 22));
 
 `
-
+//Stacked LHS containers
 const StackedDiv = styled.div`
     display: flex;
     flex-direction: column;
-    width: 50%; // Added width to limit the size of the left content
-    margin-left: 30px; // Added margin to give some space on the left
-
+    width: 50%; 
+    margin-left: 30px; 
 
 `
+
+//RHS container
 const PhotosVideosCont = styled.div`
-    width: 40%; // Set width for the photos section
-    margin-right: 30px; // Added margin to give some space on the right
+    width: 40%; 
+    margin-right: 30px; 
 `
 
-
-
-
-
-
+//Return all AboutUs components
 const AboutUs =() => {
     return(
         <FullCont>

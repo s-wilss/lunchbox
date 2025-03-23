@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
+//Styling for container holding all links, & individual links
 const LinkCont = styled.div`
     display: flex;
     gap: 2rem;
@@ -23,16 +24,14 @@ const LinkCont = styled.div`
     `
     
 
-
+//Returns three links (wout functionality)
 const SocialMediaLinks = () => {
     return(
         <div>
             <LinkCont>
-             
                 <a href = "#">Facebook</a>
                 <a href = "#">Instagram</a>
                 <a href = "#">Youtube</a>
-
             </LinkCont>
 
         </div>

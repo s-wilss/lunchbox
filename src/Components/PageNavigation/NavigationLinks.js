@@ -1,6 +1,7 @@
 import React from 'react';
 import styled from 'styled-components'
 
+//Style for entire navigation container
 const NavCont = styled.div`
     display: flex;
     gap: 1rem;
@@ -26,6 +27,7 @@ const NavCont = styled.div`
     }
     `
 
+//Returns a list of three navigation links
 const NavigationLinks = () => {
     return(
         <div>

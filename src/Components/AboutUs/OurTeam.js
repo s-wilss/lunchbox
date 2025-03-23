@@ -4,27 +4,26 @@ import Mike from "../../Images/mike.png";
 import Sarah from "../../Images/sarah.png";
 import Benson from "../../Images/benson.png";
 
-
+//Array to hold the details of each team member
 const teamMembers = [
         {src: Mike, alt: "Mike Lee Headshot", name: "Mike Lee", job: "Head Coach"},
         {src: Sarah, alt: "Sarah Smith Headshot", name: "Sarah Smith", job: "Strength & Conditioning Specialist"},
         {src: Benson, alt: "Benson Karunayake Headshot", name: "Benson Karunayake", job: "Technique Specialist"}
     ];
 
-
+//Styling for each individual team member image w/ on hover effect
 const ImageBubble = styled.img`
     height: 15rem;
     width: auto;
     border-radius: 50%;
-    transition: transform 0.3s ease-in-out; /* Smooth transition */
+    transition: transform 0.3s ease-in-out; 
 
     &:hover {
-        transform: scale(1.2); /* Increases size by 20% */
+        transform: scale(1.2); 
     }
-
 `
 
-
+//Styling for entire container minus title
 const TeamContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -37,16 +36,16 @@ const TeamContainer = styled.div`
 
     p{
         font-size: 15px;
-    
     }
-
 `;
 
+//Styling for each individual member
 const TeamMember = styled.div`
     text-align: center;
-    max-width: 200px; /* Limit width of each team member */
+    max-width: 200px; 
 `;
 
+//Styling for the title
 const TeamTitleCont = styled.div`
         font-size: 25px;
         font-family: 'Trade Winds', serif;
@@ -57,6 +56,7 @@ const TeamTitleCont = styled.div`
         margin-bottom: 10px;
     `
 
+//Styling for each individual bit of information related to the team member
 const InfoContainer = styled.div`
     display: flex;
     justify-content: center;
@@ -65,7 +65,7 @@ const InfoContainer = styled.div`
     white-space: nowrap; /* Prevents text from wrapping */
 `;
 
-
+//Return the structure using .map to iterate for each entry in the array, inserting the src, alt, name & job into correct tags
 const OurTeam = () => {
     return(
         <div>
@@ -80,14 +80,8 @@ const OurTeam = () => {
                         <InfoContainer>
                             <p>{teamMember.job}</p>
                         </InfoContainer>
-                        
                     </TeamMember>
-
-
-
                 ))}
-
-
             </TeamContainer>
         </div>
     );

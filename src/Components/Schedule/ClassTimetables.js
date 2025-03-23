@@ -1,54 +1,58 @@
 import React from 'react';
 import styled from 'styled-components';
 
-/* Styled components for your table */
+// Style for individual table
 const ClassTable = styled.table`
     font-family: 'Host Grotesk', sans-serif;
     font-size: 16px;
     color: white;
-    width: 100%; /* Make table take full width of container */
+    width: 100%; 
 `;
 
+//Style for each tilt, table pair
 const TitleTable = styled.div`
     display: flex;
     flex-direction: column;
     justify-content: center;
-    width: 45%; /* Control width of each table section */
+    width: 45%; 
 `;
 
+//Style for entire table area
 const TableSpace = styled.div`
     display: flex;
     flex-direction: row;
-    justify-content: space-between; /* Changed from space-around for better control */
+    justify-content: space-between; 
     margin-right: 150px;
     margin-bottom: 100px;
-    gap: 30px; /* This adds the gap between your tables */
+    gap: 30px; 
 `;
 
+//Style for heading for each table
 const Heading = styled.h5`
-    text-align: center; /* Ensure text is centered */
+    text-align: center; 
     font-size: 20px;
     font-family: 'Trade Winds', serif;
-    width: 100%; /* Full width of parent */
+    width: 100%; 
     margin-bottom: 0px;
-    white-space: nowrap; /* Prevent text from wrapping */
-    overflow: hidden; /* Hide overflow */
-    text-overflow: ellipsis; /* Add ellipsis if text is too long */
+    white-space: nowrap; 
+    overflow: hidden; 
+    text-overflow: ellipsis; 
 `;
 
+//Style for individual tables cells
 const TableCell = styled.td`
     padding: 20px;
     line-height: 1;
-   
 }
-
 `;
 
+//Different styling for first column
 const FirstTableCell = styled.td`
     background-color: rgb(19, 51, 29);
     font-weight: bold;
 `;
 
+//Style for section title
 const TimetableTitleCont = styled.h2`
     font-size: 25px;
     font-family: 'Trade Winds', serif;
@@ -58,10 +62,7 @@ const TimetableTitleCont = styled.h2`
     display: block;
 `;
 
-
-
-
-
+//Returns title and both tables
 const ClassTimetable = () => {
     return (
         <div className="ClassTimetable">

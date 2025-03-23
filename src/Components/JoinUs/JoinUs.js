@@ -4,7 +4,7 @@ import SignUp from "./SignUp";
 import styled from "styled-components";
 
 
-
+//Styling for the title container & title text
 const TitleBar = styled.div`
     display: flex;
     height: 50px;
@@ -20,9 +20,9 @@ const TitleBar = styled.div`
         padding: 10px 0;
 
     }
-
 `
 
+//Styling for the entire container minus title 
 const FullCont = styled.div`
     display: flex;
     flex-direction: row;
@@ -34,8 +34,7 @@ const FullCont = styled.div`
    
 `
 
-
-
+//Returns the title, as well as SignUp & SendUsAMessage components
 const JoinUs =() =>{
     return(
         <div id="joinus">

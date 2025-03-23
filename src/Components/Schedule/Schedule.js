@@ -3,6 +3,8 @@ import ClassTimetable from "./ClassTimetables";
 import ProfessionalFights from "./ProfessionalFights";
 import styled from "styled-components";
 
+
+//Styling for the title 
 const TitleBar = styled.div`
     display: flex;
     height: 50px;
@@ -16,12 +18,10 @@ const TitleBar = styled.div`
         color: white; 
         margin: 0;
         padding: 10px 0;
-
     }
-
     `
 
-
+//Styling for the entire container
 const FullCont = styled.div`
     display: flex;
     flex-direction: row;
@@ -30,12 +30,9 @@ const FullCont = styled.div`
     height: 800px; 
     justify-content: space-between;
     align-items: center;
-   
-
 `
 
-
-
+//Returns title, ProfessionalFights & Class Timetable components
 const Schedule = () => {
     return(
         <div id ="schedule">

@@ -2,7 +2,7 @@ import React from "react";
 import CopyrightStatement from "./CopyrightStatement";
 import styled from "styled-components";
 
-
+//Styling for the footer container
 const FullCont = styled.div`
     display: flex;
     flex-direction: column;
@@ -14,6 +14,7 @@ const FullCont = styled.div`
    
 `
 
+//Returns the copyright statement component
 const Footer =() => {
     return(
         <FullCont>

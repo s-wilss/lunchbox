@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import styled from 'styled-components';
 
+//Styling for entire Send Us a Message container
 const MessageCont = styled.div`
     display: flex;
     flex-direction: column;
@@ -8,6 +9,8 @@ const MessageCont = styled.div`
 
 `
 ;
+
+//Styling for the textbox
 const Textarea = styled.textarea`
   font-family: 'Host Grotesk', sans-serif;
   font-size: 16px;
@@ -19,9 +22,10 @@ const Textarea = styled.textarea`
   padding: 8px 12px;
   margin: 8px 0;
   transition: all 0.3s ease;
-  flex: 1;  // Allow inputs to take up remaining space
+  flex: 1;  
 `;
 
+//Styling for the Send button
 const Button = styled.button`
   font-family: 'Host Grotesk', sans-serif;
   background-color: rgb(19, 51, 29);
@@ -37,6 +41,7 @@ const Button = styled.button`
   margin-right: auto;
 `;
 
+//Styling for the entire modal container 
 const Modal = styled.div`
   display: flex;
   flex-direction: column;
@@ -52,6 +57,7 @@ const Modal = styled.div`
   color: white;
 `;
 
+//Styling for the content of the modal
 const ModalContent = styled.div`
   background-color: rgb(253, 253, 253);;
   padding: 20px;
@@ -60,6 +66,7 @@ const ModalContent = styled.div`
   color: black;
 `;
 
+//Styling for the close button within the modal
 const CloseButton = styled.button`
   margin-top: 10px;
   padding: 10px 15px;
@@ -70,24 +77,28 @@ const CloseButton = styled.button`
   cursor: pointer;
 `;
 
+
 const SendUsAMessage = () => {
-  const [isModalOpen, setIsModalOpen] = useState(false); // State for controlling modal visibility
-  const [message, setMessage] = useState(''); // State to store message input
+  const [isModalOpen, setIsModalOpen] = useState(false); // Controls modal visibility
+  const [message, setMessage] = useState(''); //Stores message input
 
   const handleInputChange = (e) => {
     setMessage(e.target.value); // Update the message state on input change
   };
 
+  // Open modal when the form is submitted
   const handleSubmit = (e) => {
     e.preventDefault();
-    // Open modal when the form is submitted
+    
     setIsModalOpen(true);
   };
 
+  // Close modal
   const closeModal = () => {
-    setIsModalOpen(false); // Close modal
+    setIsModalOpen(false); 
   };
 
+  // Returns the title, textbox & send button, & modal when send is clicked
   return (
     <MessageCont>
       <h2 style={{ textAlign: 'center', fontFamily: 'Trade Winds, serif', color: 'white', fontSize: '25px' }}>
@@ -100,17 +111,17 @@ const SendUsAMessage = () => {
           placeholder="Enter your message"
           required
           id="contactusmessage"
-          value={message} // Bind the textarea value to the message state
-          onChange={handleInputChange} // Update state when the user types
+          value={message} 
+          onChange={handleInputChange} 
         />
         <Button type="submit">Send</Button>
       </form>
 
-      {/* Conditional rendering of the modal */}
+      
       {isModalOpen && (
         <Modal>
           <ModalContent>
-            <p>Thank you for sending us your message: <br />{message}</p> {/* Display the message in the modal */}
+            <p>Thank you for sending us your message: <br />{message}</p> 
             <CloseButton onClick={closeModal}>Close</CloseButton>
           </ModalContent>
         </Modal>

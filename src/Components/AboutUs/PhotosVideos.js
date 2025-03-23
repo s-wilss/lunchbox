@@ -1,5 +1,4 @@
 import React from 'react';
-import PhotoAlbum from "react-photo-album";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Image1 from "../../Images/hermes-rivera-qbf59TU077Q-unsplash.jpg";
@@ -7,7 +6,7 @@ import Image2 from "../../Images/joel-muniz-lUK16p_JtCM-unsplash.jpg";
 import Image3 from "../../Images/mark-adriane-FH6JcaCrYJ0-unsplash.jpg";
 
 
-/*Override to reduce gaps in carousel*/
+// Reduces gaps in carousel to fit in container correctly
 const customStyles = `
   .carousel-root .thumbs-wrapper {
     margin: -15px 0 !important; 
@@ -24,16 +23,17 @@ const customStyles = `
 `;
 
 
-
-
+//Returns an image carousel using photos from array
 const PhotosVideos = () => {
 
+    //Array to hold images & alt text
     const images = [
         {src: Image1, alt: "A man punching pads"},
         {src: Image2, alt: "A boxing ring"},
         {src: Image3, alt: "Two men sparring"}
     ];
 
+    //Styles for carousel container
     const carouselCont = {
         width: '70%',
         height: '25%',
@@ -41,8 +41,9 @@ const PhotosVideos = () => {
         marginRight: 'auto',
         marginTop: '10px'  
                  
-            };
+        };
 
+    //Styles for Title
     const titleCont = {
         fontSize: '25px',
         fontFamily: 'Trade Winds, serif',
@@ -56,7 +57,6 @@ const PhotosVideos = () => {
                     
                 
 
-
     return(
         <div>
             <style>{customStyles}</style>
@@ -65,8 +65,8 @@ const PhotosVideos = () => {
             </div>
                 <div style = {carouselCont}>
                     <Carousel
-                    autoPlay={true}
-                    interval={10000} // 10 seconds in milliseconds
+                    autoPlay={true} //Continuously cycle
+                    interval={10000} //Set to 10 seconds
                     infiniteLoop={true}
                     showStatus={false}
                     showThumbs={true}
@@ -77,8 +77,6 @@ const PhotosVideos = () => {
                             </div>
                         ))}
 
-
-                    
                     </Carousel>
                 </div>
 

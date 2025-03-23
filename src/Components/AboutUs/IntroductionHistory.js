@@ -2,15 +2,16 @@ import React from 'react';
 import styled from 'styled-components';
 
 
-
+//Styling for the main body of text
 const TextContent = styled.div`
     font-family: 'Host Grotesk', sans-serif;
     font-size: 16px;
     color: white;
     line-height: normal;
     margin: 20px;
-
 `
+
+//Styling for the title text
 const IntroTitleCont = styled.div`
         font-size: 25px;
         font-family: 'Trade Winds', serif;
@@ -21,7 +22,7 @@ const IntroTitleCont = styled.div`
         margin-bottom: 10px;
     `
 
-
+//Return the title & body text
 const IntroductionHistory = () => {
     return(
         <div className='IntroductionHistory'>

@@ -4,7 +4,7 @@ import NavigationLinks from "./NavigationLinks";
 import SearchBar from "./SearchBar";
 import SocialMediaLinks from "./SocialMediaLinks";
 
- /* Style for navigation list*/
+ //Style for navigation list
  const NavigationCont = styled.div`
     display: flex;
     height: 65px;
@@ -16,19 +16,15 @@ import SocialMediaLinks from "./SocialMediaLinks";
     justify-content: space-between;
     `
  
-
+//Style for the container with nav links & search bar
 const HalfCont = styled.div`
     display: flex;
     justify-content: space-between;
     `
 
-
-
-
+//Returns the Searchbar + Navigation links in a container, and the Social media links
 const PageNavigation = () =>{
- 
     return(
-        
         <div>
             <NavigationCont>
                 <HalfCont>
@@ -37,7 +33,6 @@ const PageNavigation = () =>{
                 </HalfCont>
                 <SocialMediaLinks/>
             </NavigationCont>
-    
         </div>
     );
 }

@@ -1,7 +1,8 @@
 import React, { useState } from 'react';
 
-// CSS styles defined within the component
+// CSS inline styles defined within the component
 const styles = {
+    //Entire container
     signupBlock: {
       display: 'flex',
       flexDirection: 'column',
@@ -9,12 +10,15 @@ const styles = {
       alignItems: 'center',
       marginLeft: '150px',
     },
+    //Individual sections
     formGroup: {
       marginBottom: '10px',
       display: 'flex',
-      flexDirection: 'row',  // This makes the form fields sit horizontally
-      alignItems: 'center',  // Ensure labels and inputs are vertically aligned
+      flexDirection: 'row',  
+      alignItems: 'center',  
     },
+
+    //Individual text boxes
     input: {
       fontFamily: "'Host Grotesk', sans-serif",
       fontSize: "16px",
@@ -26,13 +30,17 @@ const styles = {
       padding: "8px 12px",
       margin: "8px 0",
       transition: "all 0.3s ease",
-      flex: 1,  // Allow inputs to take up remaining space
+      flex: 1,  
     },
+
+    //Label within textboxes
     label: {
-      marginRight: '10px', // Add space between the label and the input
+      marginRight: '10px', 
       fontSize: "16px",
       color: "white",
     },
+
+    //Send button
     button: {
       fontFamily: "'Host Grotesk', sans-serif",
       backgroundColor: "rgb(19, 51, 29)",
@@ -47,6 +55,8 @@ const styles = {
       marginLeft: "auto",
       marginRight: "auto",
     },
+
+    //Modal popup after clicking send
     modal: {
       display: "flex",
       flexDirection: "column",
@@ -61,6 +71,8 @@ const styles = {
       zIndex: "1000",
       color: "white",
     },
+
+    //Content of modal popup 
     modalContent: {
       backgroundColor: "#fff",
       padding: "20px",
@@ -68,6 +80,8 @@ const styles = {
       textAlign: "center",
       color: "black",
     },
+
+    //Close button in modal
     closeButton: {
       marginTop: "10px",
       padding: "10px 15px",
@@ -79,6 +93,7 @@ const styles = {
     },
   };
 
+//Component for the sign-up form 
 const SignUp = () => {
   const [formData, setFormData] = useState({
     firstName: '',
@@ -86,9 +101,11 @@ const SignUp = () => {
     email: ''
   });
 
+  //Controls whether modal is displayed
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [signupMessage, setSignupMessage] = useState('');
 
+  //Update state when inout fields are filled
   const handleChange = (e) => {
     const { name, value } = e.target;
     setFormData(prevState => ({
@@ -97,6 +114,7 @@ const SignUp = () => {
     }));
   };
 
+  // If fields are filled, open modal & show message
   const handleSubmit = (e) => {
     e.preventDefault();
 
@@ -108,10 +126,13 @@ const SignUp = () => {
     }
   };
 
+  //Close the modal
   const closeModal = () => {
     setIsModalOpen(false);
   };
 
+
+  //Returns title & three input text box sections, along with a send button
   return (
     <div style={styles.signupBlock}>
       <h2 style={{ textAlign: 'center', fontFamily: 'Trade Winds, serif', color: 'white', fontSize: '25px'}}>
