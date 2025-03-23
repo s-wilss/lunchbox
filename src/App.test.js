@@ -1,3 +1,33 @@
+
+//Required to mock PhotosVideos due to carousel import & mapbox api 
+jest.mock('./Components/AboutUs/PhotosVideos', () => () => <div>Mocked Photos & Videos Component</div>);
+jest.mock('mapbox-gl', () => ({
+  Map: jest.fn(() => ({
+    on: jest.fn(),
+    off: jest.fn(),
+    setStyle: jest.fn(),
+    addControl: jest.fn(),
+    addLayer: jest.fn(),
+  })),
+}));
+
+jest.mock('react', () => ({
+  ...jest.requireActual('react'),
+  useRef: jest.fn().mockReturnValue({ current: null }),
+}));
+
+jest.mock('./Components/ErrorBoundaries/ErrorBoundaries', () => {
+  return {
+    __esModule: true,
+    default: ({ children }) => children
+  }
+});
+
+jest.mock('./Components/Schedule/ProfessionalFights', () => () => <div role="presentation">Mocked Professional Fights</div>);
+
+
+
+
 import React from 'react';
 import { render, screen } from '@testing-library/react';
 import App from './App';
@@ -72,24 +102,22 @@ test('renders sign up component with correct  label names, and correct number of
 
 
 //Tests for the copyright statement
-
-  test('renders Footer component with copyright text', () => {
-   
-    expect(screen.getByText(/2025 @ Lunchbox PTY LTD/i)).toBeInTheDocument();
+test('renders Footer component with copyright text', () => {
+  const copyrightElement = screen.getByText((content, element) => {
+    return content.includes('2025 @ Lunchbox PTY LTD');
   });
+  expect(copyrightElement).toBeInTheDocument();
+}); // This closes the Footer test
 
-  
-//Tests for interactive elements: Links & BUttons
+//Tests for interactive elements: Links & Buttons
+test('renders links in navigation', () => {
+  const navLinks = screen.getAllByRole('link');
+  expect(navLinks.length).toBeGreaterThan(0);
+});
 
-  test('renders links in navigation', () => {
-    const navLinks = screen.getAllByRole('link');
-    expect(navLinks.length).toBeGreaterThan(0);
-  });
+test('renders buttons in interactive sections', () => {
+  const buttons = screen.getAllByRole('button');
+  expect(buttons.length).toBeGreaterThan(0);
+});
 
-
-
-  test('renders buttons in interactive sections', () => {
-    const buttons = screen.getAllByRole('button');
-    expect(buttons.length).toBeGreaterThan(0);
-  });
 });

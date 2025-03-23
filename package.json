@@ -1,6 +1,6 @@
 {
   "name": "my-app",
-  "homepage": "https://s-wilss.GitHub.io/github-pages-app/",
+  "homepage": "https://s-wilss.github.io/lunchbox/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
@@ -44,10 +44,11 @@
     ]
   },
   "jest": {
-    "transformIgnorePatterns": [
-      "node_modules/(?!(react-photo-album)/)"
-    ]
+  "moduleNameMapper": {
+    "\\.(css|less|scss|sass)$": "identity-obj-proxy"
+  }
   },
+  
   "devDependencies": {
     "gh-pages": "^6.3.0"
   }

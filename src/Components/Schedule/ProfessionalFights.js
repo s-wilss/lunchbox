@@ -5,6 +5,7 @@ import 'mapbox-gl/dist/mapbox-gl.css';
 // Set your Mapbox access token
 mapboxgl.accessToken = 'pk.eyJ1Ijoic3dpbHNzIiwiYSI6ImNtN2RhOHZsOTAxMjkybXB3NXpqdHYxZGgifQ.E-xet5qyC2UppM0lIK80wQ';
 
+// Define popup styles outside the component
 const popupStyles = `
   .mapboxgl-popup .mapboxgl-popup-content {
     text-align: center;
@@ -33,12 +34,27 @@ const popupStyles = `
 
 const ProfessionalFights = () => {
   const mapContainerRef = useRef(null);
+  const styleRef = useRef(null);
   
-   // Add custom CSS for popup styling
-   const styleElement = document.createElement('style');
-   styleElement.textContent = popupStyles;
-   document.head.appendChild(styleElement);
-
+  // First useEffect for setting up styles
+  useEffect(() => {
+    // Add custom CSS for popup styling
+    const styleElement = document.createElement('style');
+    styleElement.textContent = popupStyles;
+    document.head.appendChild(styleElement);
+    
+    // Save reference to remove it later
+    styleRef.current = styleElement;
+    
+    // Clean up when component unmounts
+    return () => {
+      if (styleRef.current) {
+        document.head.removeChild(styleRef.current);
+      }
+    };
+  }, []); // Run once on mount
+  
+  // Second useEffect for map initialization
   useEffect(() => {
     // Make sure the container ref is available
     if (!mapContainerRef.current) return;
@@ -75,7 +91,6 @@ const ProfessionalFights = () => {
         venue: "Melbourne Pavillion"
       }
     ];
-
     
     // Wait for map to load before adding markers
     map.on('load', () => {
@@ -125,11 +140,10 @@ const ProfessionalFights = () => {
           borderRadius: '8px',
           marginLeft:'50px'
         }} 
+        role="presentation" // Important for your test
       />
     </div>
   );
 };
 
 export default ProfessionalFights;
-
-

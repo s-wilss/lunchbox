@@ -1,5 +1,5 @@
 import React from 'react';
-import PhotoAlbum from "react-photo-album"
+import PhotoAlbum from "react-photo-album";
 import "react-responsive-carousel/lib/styles/carousel.min.css";
 import { Carousel } from 'react-responsive-carousel';
 import Image1 from "../../Images/hermes-rivera-qbf59TU077Q-unsplash.jpg";
